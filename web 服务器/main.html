@@ -1,0 +1,527 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name ="viewpoint" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+
+
+<title>~欢迎来到xFudan~</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+	
+
+<script type="text/javascript" src="js/jquery.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>	
+	
+	
+<script src="js/html5.js"></script>
+
+<link href="css/login_page.css" rel="stylesheet"  type="text/css">
+<link href="css/main-menu.css" rel="stylesheet"  type="text/css">
+<script src="js/homepage.js"></script>
+<script src="js/main.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./public/css/jquery.Jcrop.min.css" media="all">
+<link rel="stylesheet" type="text/css" href="./public/js/uploadify-v3.1/uploadify.css" media="all">
+
+<script type="text/javascript" src="./public/js/uploadify-v3.1/jquery.uploadify-3.1.min.js"></script>
+<script type="text/javascript" src="./public/js/jquery.Jcrop.min.js"></script>
+<script type="text/javascript" src="./public/js/ThinkBox/jquery.ThinkBox.js"></script>
+<script type="text/javascript" src="./public/js/jquery.form.js"></script>
+<link rel="stylesheet" type="text/css" href="./public/js/ThinkBox/css/ThinkBox.css" media="all">
+
+<script type="text/javascript">
+	
+
+    	
+</script>
+
+<style type="text/css">
+
+</style>
+
+</head>
+
+<body style="background-color:#999999;">
+<nav class="navbar navbar-inverse limit-width2 impl_of_main_navbar" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-construct2">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">xFudan</a>
+          
+          
+          
+          <ul class="nav navbar-nav">
+									<li id="client_management" class="dropdown">
+										<a data-toggle="dropdown" class="dropdown-toggle" href="#" onClick="getProfile()">账户管理</a>
+										<ul class="dropdown-menu">
+											<li style="margin:5px">
+												<h5 class="nav-header" style="text-indent:1em;">
+												个人信息：
+												</h5>
+												<table id="myProfile" style="margin:10px">
+          												
+												</table>
+												
+												
+											</li>
+										</ul>	
+									</li>	
+								</ul>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+            
+    
+        
+            
+            
+            </li>
+            
+          </ul>
+          <ul class="nav navbar-nav pull-right"  >
+								<li id = "more_advice"><a href="#"   onmouseover="c1('more_advice')" onmouseout="c1('more_advice')" onClick="pppop('backgroundPopup1','popupContact1')">建议</a></li>
+								<li id = "contact_us"><a href="#"   onmouseover="c1('contact_us')" onmouseout="c1('contact_us')" onClick="pppop('backgroundPopup2','popupContact2')" >联系我们</a></li>
+								<li id="lidropdown">
+									<a href="#" >更多<b class="caret"></b></a>
+								</li>
+							</ul>
+        </div><!-- /.navbar-collapse -->
+        </div>
+      </nav>
+
+				
+		
+          
+           
+     
+  	<script>
+	
+
+
+
+</script>
+
+
+
+<div class="navbar-construct1 main_table_div container-fluid main-container">
+<table id="main_table" class="table main_table_class">
+<thead>
+	<tr>
+	
+	<td style="width:168px;border-right:1px solid #999999;">
+	
+	<ul style="width:100%">
+		<li class="dropdown" style="list-style-type:none;margin-left:-25px">
+		<button class="btn btn-default" style="margin-top:8px;"  onClick="pppop('new_group_popup','new_group_contact')"><b>+</b></button>
+		</li>
+	</ul>
+	</td>
+	
+	<td style="background-color:#ffffff;border-right:1px solid #eeeeee;" >
+	<button id="create_event_button" class="btn btn-default m2" data-toggle="dropdown" class="dropdown-toggle"  style="margin-top:8px;"  onClick="pppop('new_event_popup','new_event_contact')"><b>+</b></button>
+	<div id="modified_group_button" class="pull-right m2"><a href="#" onClick="modified_group_info();"><img src="picture/modified.png" style="margin-top:10px;"class="pull-right"/></a></div>
+	</td>
+	<td colspan="1" style="background-color:#ffffff;">
+	<div id="modified_event_button" class="m2  pull-right"><a href="#" id=""  onClick="modified_event_info()"><img src="picture/modified.png" style="margin-top:10px;"/></a></div>
+	</td>
+	<td style="background-color:#ffffff;">
+	<div class="pull-right" style="margin-top:6px;">
+     <div class="input-group">
+  		<span class="input-group-addon"><img style="width:19px;height:19px;" src="picture/fangdajing.png"/></span>
+  		<input type="text" class="form-control" placeholder="search">
+	</div>
+ 	</div>
+	
+	</td>
+	
+	</tr>
+</thead>
+<tr>
+	
+	<td rowspan="2" style="border-right:1px solid #999999;border-top:1px solid #999999;">
+		<ul id="display-list-group">
+			
+		</ul>
+	</td>
+	<td rowspan="2" id='event-list-display' style="">
+		
+		
+	</td>
+	
+	<td id="show_event_detail" class="event_detail" style="background-color:#ffffff;border-right:1px solid #eeeeee;border-top:1px solid #999999">
+												
+	</td>
+	
+	<td id="show_barcode" style="background-color:#ffffff;border-top:1px solid #999999">
+		
+	</td>
+</tr>
+
+
+<tr>
+	
+	<td colspan="2" style="background-color:#ffffff;" id='show-attendence'>
+	
+	<h5>参加情况：</h5>
+	<table id='show-attendence-ul' style='list-style-type:none;width:100%;' class="table table-striped">
+	</table>
+	
+	</td>
+</tr>
+
+
+</table>
+
+
+
+<div id="buttonpop">
+
+        	<div id="popupContact3">  
+	
+       			 <a id="popupContactClose3" onClick="dis('backgroundPopup3','popupContact3')">[X]</a>  
+
+        		<h1>二维码：</h1>
+        		<div id = "larger_barcode">  
+				
+   				</div>
+   			</div>  
+
+   		<div id="backgroundPopup3"></div>  
+</div>
+
+<div id="buttonpop">
+
+        	<div id="image_group_Contact">  
+	
+       			 <a id="image_group_Close" onClick="dis('image_group_Popup','image_group_Contact')">[X]</a>  
+
+        		<h1>二维码：</h1>
+        		<div id = "image_larger_barcode">  
+				
+   				</div>
+   			</div>  
+
+   		<div id="image_group_Popup"></div>  
+</div>
+
+
+<script>
+
+
+	
+</script>
+
+<div id="buttonpop">
+
+        	<div id="new_group_contact">  
+	
+       			 <a id="new_group_Close" onClick="dis('new_group_popup','new_group_contact')">[X]</a>  
+
+        		<h1>新建分组：</h1>  
+				<table id="create_group_list" style="margin-left:40px">
+					<tr>
+						
+						<td>分组名称：<br><input id="group_name" type="text" name="name" placeholder="分组名称" class="form-control"/></td>
+					</tr>
+					<tr>
+						
+						<td>最大人数：<br><input id="group_max_member" type="number" name="max_member" placeholder="60" class="form-control" style="width:290px;"/></td>
+					</tr>
+					
+					<tr>
+						
+					</tr>
+					<tr>
+						
+						<td colspan="1">分组描述：<br><textarea id="group_describe" name="describe" placeholder="分组描述" class="form-control" maxlength=100></textarea></td>
+					</tr>
+					<tr>
+
+						<td colspan="1"><br><input class="btn-block btn btn-primary" type="submit" value="提交" onmouseup="create_group();"/></td>
+					</tr>
+				</table>
+   			</div>  
+
+   		<div id="new_group_popup"></div>  
+</div>
+
+<script>
+
+	
+
+</script>
+
+    
+    
+    
+    
+    
+<div id="buttonpop">
+
+        	<div id="new_event_contact">  
+	
+       			 <a id="new_event_Close" onClick="dis('new_event_popup','new_event_contact')">[X]</a>  
+					<h1>新建活动：</h1>  
+					<table id="create_event_list" style="margin-left:40px;margin-bottom:20px;">
+						<tr>
+							
+							<td>
+							活动组别：<br>
+								
+								<span id="group-select"></span>
+								
+							</td>
+						</tr>
+						<tr>
+							
+							<td>
+							
+							
+
+							
+							
+							活动名称：<br><input id = "create_event_name" type="text" name="name" placeholder="未命名"  class="form-control"></td>
+						</tr>
+						<tr>
+							
+							<td>活动时间：<br>
+							
+							 <div class="form-group" style="height:20px;">
+                
+                		<div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-data-format="yyyy-mm-dd hh:mm:ss" data-link-field="dtp_input1">
+                    		<input id = "create_event_start_time" class="form-control" size="16" type="text" value="" style="width:210px">
+                    		<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+							<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                		</div>
+						<input type="hidden" id="dtp_input1" value="" /><br/>
+            		</div>
+					<script type="text/javascript">
+    				$('.form_datetime').datetimepicker({
+        				language:  'zh-CN',
+        				weekStart: 1,
+        				todayBtn:  1,
+						autoclose: 1,
+						todayHighlight: 1,
+						startView: 2,
+						forceParse: 0,
+        				showMeridian: 1
+    				});
+	
+					</script>
+
+						</tr>
+						<tr>
+						
+							<td>截止时间：<br>
+							
+							<div class="form-group" style="height:20px;">
+							<div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-data-format="yyyy-mm-dd hh:mm:ss" data-link-field="dtp_input1">
+                    		<input id = "create_event_end_time" class="form-control" size="16" type="text" value="" style="width:210px">
+                    		<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+							<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                		</div>
+						<input type="hidden" id="dtp_input1" value="" /><br/>
+            		</div>
+					<script type="text/javascript">
+    				$('.form_datetime').datetimepicker({
+        				language:  'zh-CN',
+        				weekStart: 1,
+        				todayBtn:  1,
+						autoclose: 1,
+						todayHighlight: 1,
+						startView: 2,
+						forceParse: 0,
+        				showMeridian: 1
+    				});
+	
+					</script>
+							
+							
+							</td>
+						</tr>
+						<tr>
+						<td>
+							公共：<input type="radio" name="event_usage" value="public" checked/>
+							私人：<input type="radio" name="event_usage" value="private"/>
+						</td>
+						</tr>
+						<tr>
+							<td>二维码有效时间：<br><input id = "create_valid_time" type="number" name="" placeholder="未命名"  class="form-control"></td>
+						</tr>
+						<tr>
+							<td colspan="1">活动描述：<br><textarea id = "create_event_describe" name="describe" placeholder="分组描述"  class="form-control" maxlength="100"></textarea></td>
+						</tr>
+						<tr>
+						<td colspan="1"><br><button class="btn btn-block btn-primary" onClick="create_event();dis('new_event_popup','new_event_contact');">提交</button></td>
+						</tr>						
+					</table>
+
+   			</div>  
+
+   		<div id="new_event_popup"></div>  
+</div>
+
+
+</div>
+<div id="buttonpop">
+
+        <div id="popupContact1">  
+
+        <a id="popupContactClose1" onClick="dis('backgroundPopup1','popupContact1')">[X]</a>  
+
+        <h1>建议</h1>  
+		<form action="#">
+		<table>
+         <tr>
+         	<td class="span1"><p class="pull-right" >姓名：</p></td>
+         	<td><input class="span2" type="text" /></td>
+         </tr>
+         <tr>
+         	<td class="span1"><p class="pull-right" >建议：</p>：</td>
+         	<td><input class="span2" type="text" /></td>
+         </tr>
+         <tr>
+         	<td class="pull-right span1"><button class="btn">取消</button></td>
+         	<td class="span1"><input type="submit" class="btn-primary" value="提交"/></td>
+         </tr>
+         </table>       
+		</form>
+   </div>  
+
+   <div id="backgroundPopup1"></div>  
+</div>
+
+
+<div id="buttonpop">
+
+        <div id="modified_profile_Contact">  
+
+        <a id="modified_profile_Close" onClick="dis('modified_profile_Popup','modified_profile_Contact')">[X]</a>  
+
+        <h1>修改信息：</h1>  
+		<form action="#">
+		<table style="margin:0 auto;width:300px;">
+        
+         <tr>
+         	<td>姓名：<br><input id="get_profile_name" class="form-control" type="text" disabled/></td>
+         </tr>
+         
+         <tr>
+         	<td>学号：<br><input id="get_profile_stuID" class="form-control" type="text" disabled /></td>
+         </tr>
+         
+         <tr>
+         	<td>性别：<br><input id="get_profile_sex" class="form-control" type="text" disabled /></td>
+         </tr>
+        
+         <tr>
+         	<td>昵称：<br><input id="get_profile_nickname" class="form-control" type="text" /></td>
+         </tr>
+         <tr>
+         	<td ><button  class="btn btn-default" data-toggle="modal" data-target="#myModal_2" onClick="reload_iframe('myModal_2_iframe')">上传图片</button><input id="get_profile_upload_path" type="text" class="form-control" disabled/>
+         	</td>	
+         </tr>
+         <tr>
+         	<td><input type="submit" class="btn btn-primary btn-block" value="提交" style="margin-bottom:20px;" onClick="post_profile_edit()"/></td>
+         </tr>
+         
+         </table>       
+		</form>
+   </div>
+   
+   
+   
+
+	
+	
+   <div id="modified_profile_Popup"></div>  
+</div>
+
+
+   <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="margin:0 auto;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">图片上传</h4>
+      </div>
+      <div class="modal-body" style="">
+       <iframe id="myModal_iframe" src="profile_upload.html" style="display:block;width:100%;height:260px;border:0px;overflow-y:hidden;overflow-x:hidden;">
+       
+       </iframe>
+      </div>
+      <div class="modal-footer">
+        <button id="upload_test" class="btn btn-default"  data-dismiss="modal" aria-hidden="true" onClick="modified_on_save();">退出</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->  
+
+
+
+
+   <!-- Modal -->
+<div class="modal fade" id="myModal_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="margin:0 auto;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel1">图片上传</h4>
+      </div>
+      <div class="modal-body" style="">
+       <iframe id="myModal_2_iframe" src="upload_image.html" style="display:block;width:100%;height:260px;border:0px;overflow-y:hidden;overflow-x:hidden;">
+       
+       </iframe>
+      </div>
+      <div class="modal-footer">
+        <button id="upload_test2" class="btn btn-default"  data-dismiss="modal" aria-hidden="true" onClick="modified_on_save();">退出</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->  	
+	
+		<div id="buttonpop">
+
+        <div id="popupContact2">  
+
+        <a id="popupContactClose2" onClick="dis('backgroundPopup2','popupContact2')">[X]</a>  
+
+        <h1>联系方式：</h1>  
+		<form method="post" action="#">
+		<table>
+         <tr>
+         	<td><p class="pull-right span1" >电话：</p></td>
+         	<td><p class="pull-left" >8888888</p></td>
+         </tr>
+         <tr>
+         	<td><p class="pull-right span1" >email：</p></td>
+         	<td><p class="pull-left" >10086@qq.com</p></td>
+         </tr>
+         </table>       
+		</form>
+   </div>  
+	
+   <div id="backgroundPopup2"></div>  
+</div>
+<input id='buttonID_saver' type='hidden' value=''>
+<input class='form-control' id='upload_image_path' type='hidden'/>
+<input class='form-control' id='upload_image_path1' type='hidden'/>
+</body>
+</html>

@@ -1,0 +1,407 @@
+@CHARSET "UTF-8";
+
+.full-height1
+{
+	width:100%;
+	height:100%;
+	margin-top:-20px;
+	background-color:#333333;
+}
+
+.full-height2
+{
+	width:330px;
+	background-color:#333333;
+	display: inline-block;
+}
+
+.navbar-construct1
+{
+	margin:0 auto;
+	max-width:900px;
+	min-width:400px;
+}
+
+.limit-width1
+{
+	min-width:400px;
+}
+.limit-width2
+{
+	min-width:900px;
+}
+
+.show_des
+{
+	overflow-y:auto;
+	height:60px;
+	width:100%
+}
+
+
+.navbar-construct2
+{
+	margin:0 auto;
+	width:900px;
+}
+
+.login-box1
+{
+	margin:30px auto 30px;
+	width:300px;
+	height:320px;
+	border-radius:10px;
+	border:1px solid #ffffff;
+	
+}
+
+.login-box2
+{
+	margin:150px auto;
+	width:400px;
+	height:320px;
+	border-radius:10px;
+	border:1px solid #ffffff;
+	
+}
+
+
+
+.login-box-table1
+{
+	margin-left:70px;
+	width:250px;
+}
+
+.login-box-table2
+{
+	width:250px;
+	margin-left:25px;
+}
+
+.login-container1
+{
+	max-width:900px;
+	min-width:400px;
+	height:100%;
+	margin:-20px auto 0px;
+	background-repeat-y: repeat;
+}
+
+.show_describe_div
+{
+	width:500px;
+	display: inline-block;
+	margin: 10px 25px 0px;
+}
+
+
+.middle
+{
+	margin-left:20px;
+}
+
+
+
+.bg-img
+{
+	background-image: url(../picture/b0e8905451368f60e3361468a26373cc.jpg);
+	width:100%;
+	height:100%;
+}
+
+.transparent-degree
+{
+	filter: alpha(opacity=60);  
+}
+
+.body-image1
+{
+	background:url('../picture/login.png') repeat-y scroll center top transparent;
+}
+
+.body-image2
+{
+	background:url('../picture/login2.png') repeat-y scroll center top transparent;
+}
+
+.list li
+{
+	list-style-type:none;
+	border:1px;
+	border-bottom: 1px solid #eeeeee;
+	align:center;
+}
+
+.list
+{
+	margin:0;
+	background-color:#ffffff;
+}
+
+.dropdown-menu1
+{
+	display:none;
+}
+
+#bg_ul
+{
+	  background-color:#eeeeee;
+}
+
+#backgroundPopup1, #backgroundPopup2, #backgroundPopup3, #new_group_popup, #new_event_popup ,#registerPopup, #backgroundPopup11, #image_group_Popup, #modified_profile_Popup
+        {
+            display: none;
+            position: fixed;
+            _position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: #cccccc;
+            border: 1px solid #cecece;
+            z-index: 1;
+        }
+        #popupContact1, #popupContact2
+        {
+            display: none;
+            position: fixed;
+            _position: absolute;
+            height: 245px;
+            width: 300px;
+            background:#eeeeee;
+            border-radius:10px;
+            border: 2px solid #cecece;
+            z-index: 2;
+            padding: 12px;
+            font-size: 13px;
+        }   
+		
+		#popupContact11
+        {
+            display: none;
+            position: fixed;
+            _position: absolute;
+            height: 400px;
+            width: 400px;
+            background:#eeeeee;
+            border-radius:10px;
+            border: 2px solid #cecece;
+            z-index: 2;
+            padding: 12px;
+            font-size: 13px;
+        }   
+		
+		#popupContact3
+		{
+			display: none;
+            position: fixed;
+            _position: absolute;
+            height: 420px;
+            width: 400px;
+            background:#eeeeee;
+            border-radius:10px;
+            border: 2px solid #cecece;
+            z-index: 2;
+            padding: 12px;
+            font-size: 13px;
+		}
+		
+		#image_group_Contact
+		{
+			display: none;
+            position: fixed;
+            _position: absolute;
+            height: 420px;
+            width: 400px;
+            background:#eeeeee;
+            border-radius:10px;
+            border: 2px solid #cecece;
+            z-index: 2;
+            padding: 12px;
+            font-size: 13px;
+		}
+		#new_group_contact
+		{
+			display: none;
+            position: fixed;
+            _position: absolute;
+            height: 400px;
+            width: 400px;
+            background:#eeeeee;
+            border-radius:10px;
+            border: 2px solid #cecece;
+            
+            z-index: 2;
+            
+            padding: 12px;
+            font-size: 13px;
+		}
+		
+		
+		
+		#new_event_contact
+		{
+			display: none;
+            position: fixed;
+            _position: absolute;
+            height: auto;
+            width: 400px;
+            background:#eeeeee;
+            border-radius:10px;
+            border: 2px solid #cecece;
+            z-index: 2;
+            padding: 12px;
+            font-size: 13px;
+		}
+		
+		#modified_profile_Contact
+		{
+			display: none;
+            position: fixed;
+            _position: absolute;
+            height: auto;
+            width: 400px;
+            background:#eeeeee;
+            border-radius:10px;
+            border: 2px solid #cecece;
+            z-index: 2;
+            padding: 12px;
+            font-size: 13px;
+		}
+		
+		#registerContact
+		{
+			display: none;
+            position: fixed;
+            _position: absolute;
+            height: 400px;
+            width: 400px;
+            background:#eeeeee;
+            border-radius:10px;
+            border: 2px solid #cecece;
+            z-index: 2;
+            padding: 12px;
+            font-size: 13px;
+		}
+		
+        #popupContact1 h1
+        {
+            text-align: left;
+            color: #6FA5FD;
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 1px dotted #D3D3D3;
+            padding-bottom: 2px;
+            margin-bottom: 20px;
+        }
+        
+        #popupContact11 h1
+        {
+            text-align: left;
+            color: #6FA5FD;
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 1px dotted #D3D3D3;
+            padding-bottom: 2px;
+            margin-bottom: 20px;
+        }
+        
+        #image_group_Contact h1
+        {
+           text-align: left;
+            color: #6FA5FD;
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 1px dotted #D3D3D3;
+            padding-bottom: 2px;
+            margin-bottom: 20px;
+        }
+        
+        #popupContact2 h1
+        {
+            text-align: left;
+            color: #6FA5FD;
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 1px dotted #D3D3D3;
+            padding-bottom: 2px;
+            margin-bottom: 20px;
+        }
+        
+        #popupContact3 h1
+        {
+            text-align: left;
+            color: #6FA5FD;
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 1px dotted #D3D3D3;
+            padding-bottom: 2px;
+            margin-bottom: 20px;
+        }
+        
+        #new_group_contact h1
+        {
+        	text-align: left;
+            color: #6FA5FD;
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 1px dotted #D3D3D3;
+            padding-bottom: 2px;
+            margin-bottom: 20px;
+        }
+        
+        #new_event_contact h1
+        {	
+        	text-align: left;
+            color: #6FA5FD;
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 1px dotted #D3D3D3;
+            padding-bottom: 2px;
+            margin-bottom: 20px;
+        }
+        
+        #registerContact h1
+		{
+			text-align: left;
+            color: #6FA5FD;
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 1px dotted #D3D3D3;
+            padding-bottom: 2px;
+            margin-bottom: 20px;
+		}
+        
+        #modified_profile_Contact h1
+        {
+        	text-align: left;
+            color: #6FA5FD;
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 1px dotted #D3D3D3;
+            padding-bottom: 2px;
+            margin-bottom: 20px;
+        }
+        
+        #popupContactClose1, #popupContactClose2, #popupContactClose3, #new_group_Close, #new_event_Close, #registerContactClose, #popupContactClose11, #image_group_Close, #modified_profile_Close
+        {
+            font-size: 14px;
+            line-height: 14px;
+            right: 6px;
+            top: 4px;
+            position: absolute;
+            color: #6fa5fd;
+            font-weight: 700;
+            display: block;
+            cursor:pointer;
+        }
+
+		.green
+		{
+			color:#0F3;
+		}
+		.red
+		{
+			color:#F00;
+		}

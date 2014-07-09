@@ -1,0 +1,273 @@
+@CHARSET "UTF-8";
+
+
+.main_table_div
+{
+	width:900px;height:100%;
+}
+
+.main_table_class
+{
+	width:900px;height:100%;background-color:#eeeeee;table-layout:fixed;
+	box-shadow:4px 4px 4px;
+}
+#display-list-event li:hover,
+#display-list-group li:hover
+{
+	background-image:url("../picture/ground_line.png");
+	background-color: rgba(0, 0, 0, 0);
+	cursor:pointer;
+}
+
+.li-active
+{
+	background-color:#999999;
+}
+
+
+  .m1
+  {
+  	display:block;
+  }
+  .m2
+  {
+  	display:none;
+  }
+
+#display-list-event li a,
+#display-list-group li a
+{
+	color:#333333;
+}
+
+body
+{
+	font-family: "微软雅黑";
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}
+
+#display-list-event li a:hover,
+#display-list-group li a:hover
+{
+	color:#ffffff;
+ 	text-decoration:none;  /*超链接无下划线*/
+}
+
+.show-chosen
+{
+	background-color:#cccccc;
+ 	text-decoration:none;  /*超链接无下划线*/
+ 	font-color:#ffffff
+}
+
+#display-list-group
+{
+	margin-left:-5px;
+	text-indent:5px;
+	list-style-type:none;
+}
+
+#event-list-display
+{
+	background-color:#ffffff;border-right:1px solid #eeeeee;border-top:1px solid #999999;
+}
+
+
+#display-list-event 
+{
+	text-indent:20px;
+	list-style-type:none;
+}
+
+#display-list-event 
+{
+	height:100%
+	list-style-type:none;
+	width:100%;
+	margin-top:5px;
+	border:1px solid #eeeeee;
+}
+
+.group-title-hidden
+{
+	width:100px;margin-right:5px;OVERFLOW-X: hidden;white-space:nowrap;
+}
+
+.event-title-hidden
+{
+	OVERFLOW-X: hidden;white-space:nowrap;
+}
+
+#display-list-group
+{
+	height:100%;
+	
+}
+
+#display-list-group li
+{
+	text-overflow:hidden;
+	overflow:hidden;	
+}
+
+.change-line
+{
+	overflow:hidden;
+	display:block;
+	word-break:break-all;
+}
+
+.show_group_barcode
+{
+	width:25px;
+	height:25px;
+}
+
+
+#show-attendence-ul
+{
+	margin-left:-6px;
+	text-indent:5px;
+	width:300px;
+	height:100%;
+	width:200px
+}
+
+.main-container
+{
+	max-width:900px;
+	min-width:400px;
+	height:100%;
+	margin:-20px auto 0px;
+	background-repeat-y: repeat;
+	
+}
+
+
+#show-attendence
+{
+	
+	
+}
+
+#show-attendence-ul li.time
+{
+	border-bottom: 1px solid #ffffff;
+}
+
+#show-attendence-ul li
+{
+	margin-left:-35px;
+}
+
+.event_detail
+{
+	height:330px;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+.main{
+	margin: 0 auto;
+	padding: 15px;
+	width: 450px;
+	font-family: "microsoft yahei";
+	background-color: #F5F5F5;
+}
+.cf:before,.cf:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.cf:after {
+	clear: both;
+}
+.cf {
+	*zoom: 1;
+}
+.upload-area {
+	position: relative;
+	float: left;
+	margin-right: 30px;
+	background-color: #F5F5F5;
+    border: 2px solid #E1E1E1;
+}
+.upload-area .file-tips {
+	position: absolute;
+	top: 90px;
+	left: 0;
+    padding: 0 15px;
+    width: 170px;
+    line-height: 1.4;
+    font-size: 12px;
+	color: #A8A8A3;
+    text-align: center;
+}
+.userup-icon {
+    display: inline-block;
+    margin-right: 3px;
+    width: 16px;
+    height: 16px;
+    vertical-align: -2px;
+	background: url("../public/img/userup_icon.png") no-repeat;
+}
+.uploadify-button {
+	line-height: 120px!important;
+	text-align: center;
+}
+.preview-area {
+	float: left;
+}
+.tcrop {
+    clear: right;
+    font-size: 14px;
+    font-weight: bold;
+}
+.update-pic .crop {
+    background: url("../public/img/mystery.png") no-repeat scroll center center #EEEEEE;
+    float: left;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.crop100 {
+    height: 100px;
+    width: 100px;
+}
+.crop60 {
+    height: 60px;
+    margin-left: 20px;
+    width: 60px;
+}
+.update-pic .save-pic {
+    clear: left;
+    margin-right: 20px;
+}
+.update-pic .uppic-btn {
+    background-color: #348FD4;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    width: 89px;
+}
+.preview {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 11;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	background:#fff;
+	display: none;
+}
