@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mHere.wifibackground"
+    android:versionCode="1"
+    android:versionName="0.99 alpha" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="16" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES"></uses-permission>
+	<uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.MODIFY_PHONE_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.DEVICE_POWER"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.mHere.wifibackground.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <receiver android:name="com.mHere.wifibackground.servicecontrol.AutoServiceReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_TICK"/>
+				<category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+            
+            <!-- 可选 服务 广播 intent-filter -->
+            <intent-filter>
+                <action android:name="com.wifibackground.broadcast"/>
+				<category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+			<intent-filter>
+                <action android:name="com.wifibackground.server.enterNewWifi"/>
+				<category android:name="android.intent.category.HOME"/>
+            </intent-filter>			
+            <intent-filter>
+                <action android:name="com.wifibackground.server.enterExistWifi"/>
+				<category android:name="android.intent.category.HOME"/>
+            </intent-filter>			
+            <intent-filter>
+                <action android:name="com.wifibackground.server.deleteExistWifi"/>
+				<category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+        
+        <service android:name="com.mHere.wifibackground.servicecontrol.WifiScanService">
+        	<intent-filter>
+                <action android:name="com.wifibackground.service"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        
+        <provider android:name="com.mHere.wifibackground.contentProvider.WifiContentProvider" 
+            		android:authorities="@string/authorities">
+        </provider>
+        <provider android:name="com.mHere.wifibackground.contentProvider.WifiListProvider" android:authorities="@string/authoritieswifi"></provider>
+        
+    </application>
+
+</manifest>
