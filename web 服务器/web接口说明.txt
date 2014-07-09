@@ -1,0 +1,135 @@
+地址=基础地址+模块地址+服务地址+参数（get参数）
+如：http://localhost/index.php/User/register?para1=111&para2=231
+基础地址：http://localhost/index.php/
+模块地址：User/
+服务地址：register
+
+模块
+User:
+	服务:
+	register
+		参数：均为post
+			login_id：要求唯一且不为空
+			password：不为空
+			name：
+			student_id
+			gender：male或female否则自动male
+			nickname：为空时忽略
+		返回：JSON（以下默认）
+			seccess：true时为成功，false为失败。
+			reason：失败时，解释原因
+			（以下默认所有服务在失败和成功时均满足前两个，并且其他参数均为成功时）
+			user_id：成功时，用户唯一编号
+	
+	login：登陆会设置session
+		参数：均为post
+			login_id
+			password
+		返回：
+			仅默认项
+
+	getProfile：获取指定用户资料
+		参数：
+			uid：（get参数）强制要求，为查找的用户资料，要求查找的用户和自己属于同一个group，或者为用户自己
+		返回：demo1
+			user_id：用户编号
+			user_name：用户名子
+			user_stutId：学号
+			user_gender：性别
+			user_nickname：昵称
+
+	getProfile：等价于 getProfile($myuid)
+
+Group：
+	getGroupList：获取自己的（admin为自己）所有group
+		返回：demo2
+			groups:数组
+				group_id
+				group_admin：创建者user_id
+				group_name
+				group_describe
+				group_max_member：最大人数
+				group_ispublic:无视
+
+	getAttendanceGroupList：获取自己参加的所有group
+		返回：demo2
+			（均同上）
+
+	getGroupDetail：获取group细节
+		参数：
+			gid（get参数）强制要求，要求为其成员
+		返回：demo3，细节略
+			group_detail：附统计
+			group_members：
+			group_event：
+
+	createGroup：创建一个group，成功后自己会加入该group
+		参数：均为post
+			name：
+			describe
+			max_member：最大人数，错误时默认为0
+		返回：
+			group_id：group编号
+
+	addGroup：加入一个group，当之前已加入或gid错误时会返回失败
+		参数：
+			gid（get参数）强制要求
+		返回：
+			group_id：group编号
+
+Event：
+	creatEvent：创建一个event
+		参数：
+			gid:（get参数）强制要求，要求为其创建者
+			name：（post参数）
+			describe：（post参数）
+			start_time：（post参数）开始时间，默认为当前时间，错误时为0
+			duration：（post参数）持续时间，时间戳时间，默认为0，错误时结果不明
+			ispublic：（post参数）公开与否，public时二维码可以由任意人员打开，private时只能由group创建者打开
+		返回：
+			event_id：
+
+	attendEventPublic：参加public的event
+		参数：
+			gid（get参数）强制要求，要求为其成员，且为public，已参加时也会报错
+		返回：
+			event_id：
+
+	attendEventPrivate：参加private的event(未测试)
+		参数：
+			attendCode（get参数）强制要求，找不到对应event，非成员，或已参加均会报错
+		返回：
+			event_id：
+
+	getEventDetail：
+		参数：
+			gid（get参数）强制要求，只要求存在
+		返回：demo,细节略
+			event_detail：
+			event_attendance：参加记录
+
+Image：该模块的几个函数均直接返回图片文件
+	getGroup：
+		参数：
+			gid（get参数）强制要求，不要求存在
+			size（get参数）默认为80
+		返回：
+			图：值为'group'+gid
+
+	getEvent：
+		参数：
+			eid（get参数）强制要求，
+			time（get参数）有效时间，默认600
+			size（get参数）默认为80
+		返回：
+			图：pravite且为创建者时，产生attendCode：md5($eid.time())，有效时间为time，值为'event_private'+attendCode
+				其他情况（包含public且不为创建者bug），值为'event_public'+eid
+
+
+demo1:{"user_id":"1","user_name":"sas","user_stutId":"sda","user_gender":"male","user_nickname":"nickname12","success":true}
+
+demo2:{"success":true,"groups":[{"group_id":"3","group_admin":"4","group_name":"fsdfs","group_describe":"sdfsdf","group_max_member":"20","group_ispublic":"public"},{"group_id":"4","group_admin":"1","group_name":"sfadsdsa","group_describe":"dfgfdgbcf","group_max_member":"0","group_ispublic":"public"}]}
+
+demo3：{"group_detail":{"group_id":"4","group_admin":{"user_id":"1","user_name":"sas","user_stutId":"sda","user_gender":"male","user_nickname":"nickname12"},"group_name":"sfadsdsa","group_describe":"dfgfdgbcf","group_max_member":"0","group_ispublic":"public","group_member_num":1},"group_members":[{"user_id":"1","user_name":"sas","user_stutId":"sda","user_gender":"male","user_nickname":"nickname12"}],"group_event":[{"event_id":"1","event_group":"4","event_name":"test","event_describe":"sdadsa","event_start_time":"2014-02-05 00:00:00","event_duration":"10000","event_ispublic":"public"},{"event_id":"2","event_group":"4","event_name":"dfs","event_describe":"fdse","event_start_time":"2014-02-04 00:00:00","event_duration":"3600","event_ispublic":"private"}],"success":true}
+
+demo4：{"event_detail":{"event_id":"1","event_group":{"group_id":"4","group_admin":{"user_id":"1","user_name":"sas","user_stutId":"sda","user_gender":"male","user_nickname":"nickname12"},"group_name":"sfadsdsa","group_describe":"dfgfdgbcf","group_max_member":"0","group_ispublic":"public"},"event_name":"test","event_describe":"sdadsa","event_start_time":"2014-02-05 00:00:00","event_duration":"10000","event_ispublic":"public","group_member_num":1,"group_member_attendance":1},"event_attendance":[{"user_id":"1","user_name":"sas","user_stutId":"sda","user_gender":"male","user_nickname":"nickname12","attendance_time":"2014-02-05 21:12:04"}],"success":true}
