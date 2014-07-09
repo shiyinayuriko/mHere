@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">mHere</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="authorities">com.mHere.wifibackground.provider</string>
+    <string name="authoritieswifi">com.mHere.wifibackground.provider.wifilist</string>
+    
+</resources>
